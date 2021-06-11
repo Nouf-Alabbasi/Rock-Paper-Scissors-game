@@ -1,0 +1,125 @@
+<html>
+    <head>
+    <title>Rock, Paper, Scissors: Humans against Computer</title>
+        
+    <style>
+        body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.hero-image {
+  background-image: url("https://static.vecteezy.com/system/resources/previews/000/693/097/original/rock-paper-scissors-flat-icons-vector.jpg");
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #6b958e;
+}
+.button {
+    background-color: #e3693c;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #a6a8ab;
+}
+</style>
+        </head>
+    
+    
+    
+    
+    
+<body> 
+    
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:50px">Rock, Paper, Scissors: Humans against Computer</h1>
+      
+  </div>
+</div>
+    
+    
+  <!--javascript-->  
+<script>
+    
+ //var counter=0;
+    
+    //assign the variables
+var answers = ["ROCK", "PAPER", "SCISSORS"];
+var won="congrats you won";
+var tie="its a tie";
+var lose="you lost";
+ 
+
+    //the function
+function choice(computer, player){
+    var computer = answers[(Math.random() * answers.length) | 0]
+    var playert= window.prompt("choose rock, paper, or scissors");
+    var player=playert.toUpperCase();
+    window.alert("you choose "+player+" and the computer choose "+computer);
+    
+   //the main if statment that checks the validityof theanswer 
+    if (player==answers[0] || player==answers[1] || player==answers[2]){
+       
+        //tie
+        if (player==computer){
+   
+            window.alert(tie);
+}
+        //win
+        if((player=="ROCK") && (computer=="SCISSORS")){
+
+            window.alert(won);
+}
+        if((player=="PAPER") && (computer=="ROCK")){
+
+            window.alert(won);
+}
+        if((player=="SCISSORS") && (computer=="PAPER")){
+            
+            window.alert(won);
+}
+       //lost
+        if((player=="SCISSORS") && (computer=="ROCK")){
+            
+            window.alert(lose);
+}
+        if((player=="ROCK") && (computer=="PAPER")){
+           
+            window.alert(lose);
+}
+        if((player=="PAPER") && (computer=="SCISSORS")){
+            
+            window.alert(lose);
+}
+                            }  
+    else{
+        window.alert("please choose a valid answer"); 
+        }
+    
+}
+   /* function count(){
+        document.write(counter);
+    }*/
+
+    //call it onclick
+</script>
+    <p align="center" > <button class="button" onclick=" choice()">PLAY</button></p>
+   
+</body>
+</html>
